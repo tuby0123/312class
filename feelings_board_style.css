@@ -1,0 +1,208 @@
+/* feelings_board_style.css */
+
+/* 소감 섹션 기본 스타일 */
+.feelings-section {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center; /* 제목과 설명 가운데 정렬 */
+}
+
+.feelings-section h2 {
+    color: #007bff; /* 파란색 계열 */
+    font-size: 2.5em;
+    margin-bottom: 1.5rem;
+}
+
+.feelings-section p {
+    font-size: 1.1em;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* 폼 컨테이너 스타일 */
+.feeling-form-container {
+    background-color: #f8f9fa;
+    border: 1px solid #e2e6ea;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    text-align: left; /* 폼 요소는 왼쪽 정렬 */
+}
+
+.feeling-form-container h3 {
+    color: #343a40;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: calc(100% - 20px); /* 패딩 고려 */
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box; /* 패딩이 너비에 포함되도록 */
+}
+
+.form-group textarea {
+    resize: vertical; /* 세로 크기 조절 가능 */
+}
+
+.submit-feeling-button {
+    background-color: #28a745; /* 초록색 */
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* 너비를 100%로 */
+}
+
+.submit-feeling-button:hover {
+    background-color: #218838;
+}
+
+/* 소감 목록 컨테이너 스타일 */
+.feeling-list-container {
+    background-color: white;
+    border: 1px solid #e2e6ea;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: left;
+}
+
+.feeling-list-container h3 {
+    color: #343a40;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.8rem;
+}
+
+#feelingsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feeling-item {
+    background-color: #f0f8ff; /* 연한 파란색 배경 */
+    border: 1px solid #cceeff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.feeling-item:last-child {
+    margin-bottom: 0; /* 마지막 항목 하단 마진 제거 */
+}
+
+.feeling-meta {
+    display: flex;
+    justify-content: space-between; /* 이름과 날짜를 양 끝으로 */
+    margin-bottom: 0.8rem;
+    font-size: 0.9em;
+    color: #6c757d;
+    border-bottom: 1px dashed #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.feeling-author {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.feeling-date {
+    font-style: italic;
+}
+
+.feeling-content {
+    font-size: 1.05em;
+    color: #343a40;
+    line-height: 1.7;
+    white-space: pre-wrap; /* 줄바꿈 유지 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .feelings-section {
+        padding: 1.5rem;
+    }
+    .feelings-section h2 {
+        font-size: 2em;
+    }
+    .feeling-form-container, .feeling-list-container {
+        padding: 1.5rem;
+    }
+    .feeling-form-container h3, .feeling-list-container h3 {
+        font-size: 1.5em;
+    }
+    .form-group input[type="text"],
+    .form-group textarea {
+        width: 100%; /* 모바일에서 너비 100% */
+    }
+    .submit-feeling-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1em;
+    }
+    .feeling-item {
+        padding: 1rem;
+    }
+}
+/* feelings_board_style.css 파일에 추가 */
+
+.feeling-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 버튼과 텍스트의 세로 정렬 맞춤 */
+    margin-bottom: 0.8rem;
+    font-size: 0.9em;
+    color: #6c757d;
+    border-bottom: 1px dashed #e9ecef;
+    padding-bottom: 0.5rem;
+}
+
+.delete-button {
+    background-color: #dc3545; /* 빨간색 */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-left: 10px; /* 이름과 날짜 사이 간격 */
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* 이름과 날짜를 묶어주는 span 추가 (선택 사항, 레이아웃 정렬을 위함) */
+.feeling-meta .info-group {
+    display: flex;
+    align-items: baseline;
+    gap: 10px; /* 이름과 날짜 사이 간격 */
+}

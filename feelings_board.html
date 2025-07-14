@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1학기 소감 나누기 - 우리 학급 홈페이지</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="feelings_board_style.css">
+    <!-- ⭐️ 기존 Supabase CDN 스크립트 라인 제거 ⭐️ -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js" defer></script> -->
+</head>
+<body>
+    <header class="main-header">
+        <h1>OO 고등학교 3학년 O반</h1>
+        <p>함께 꿈을 키워가는 우리의 공간</p>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">홈으로</a></li>
+            <li><a href="gallery.html">학급 갤러리</a></li>
+            <li><a href="feelings_board.html">1학기 소감 나누기</a></li>
+            <li><a href="#contact">문의하기</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="feelings-section">
+            <h2>📝 1학기 소감 나누기 📝</h2>
+            <p>한 학기 동안의 소중한 경험과 느낀 점을 자유롭게 남겨주세요!</p>
+
+            <div class="feeling-form-container">
+                <h3>소감 작성하기</h3>
+                <form id="feelingForm">
+                    <div class="form-group">
+                        <label for="author">이름:</label>
+                        <input type="text" id="author" required placeholder="이름을 입력해주세요.">
+                    </div>
+                    <div class="form-group">
+                        <label for="feeling">소감:</label>
+                        <textarea id="feeling" rows="5" required placeholder="1학기 소감을 자유롭게 작성해주세요."></textarea>
+                    </div>
+                    <button type="submit" class="submit-feeling-button">소감 남기기</button>
+                </form>
+            </div>
+
+            <div class="feeling-list-container">
+                <h3>학생들의 소감</h3>
+                <ul id="feelingsList">
+                    <!-- 소감들이 여기에 동적으로 추가됩니다 -->
+                    <li class="feeling-item" data-id="example1">
+                        <div class="feeling-meta">
+                            <span class="feeling-author">김철수</span>
+                            <span class="feeling-date">2025-07-14 14:30</span>
+                            <button class="delete-button">삭제</button>
+                        </div>
+                        <p class="feeling-content">이번 1학기 동안 새로운 친구들을 많이 사귀게 되어 정말 즐거웠습니다. 학급 프로젝트를 통해 협력의 중요성도 깨달았어요!</p>
+                    </li>
+                    <li class="feeling-item" data-id="example2">
+                        <div class="feeling-meta">
+                            <span class="feeling-author">이영희</span>
+                            <span class="feeling-date">2025-07-14 15:00</span>
+                            <button class="delete-button">삭제</button>
+                        </div>
+                        <p class="feeling-content">처음에는 어려운 점도 많았지만, 선생님과 친구들의 도움 덕분에 잘 이겨낼 수 있었습니다. 다음 학기도 기대됩니다!</p>
+                    </li>
+                </ul>
+                <p id="noFeelingsMessage" style="display: none; text-align: center; color: #888;">아직 남겨진 소감이 없습니다.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 OO 고등학교 3학년 O반. All rights reserved.</p>
+    </footer>
+
+    <!-- ⭐️ 여러분의 스크립트 파일에 type="module" 속성 추가 ⭐️ -->
+    <script src="feelings_board_script.js" type="module"></script>
+</body>
+</html>
