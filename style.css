@@ -1,0 +1,117 @@
+/* 기본 설정 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* 부드러운 배경색 */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 헤더 스타일 */
+.main-header {
+    background-color: #4CAF50; /* 학급을 상징하는 색상 */
+    color: white;
+    padding: 2.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 1px;
+}
+
+.main-header p {
+    font-size: 1.2em;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+/* 내비게이션 바 스타일 */
+.main-nav {
+    background-color: #333;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 메뉴 항목을 가로로 정렬 */
+    justify-content: center; /* 가운데 정렬 */
+    flex-wrap: wrap; /* 화면 크기가 작아지면 줄 바꿈 */
+}
+
+.main-nav ul li {
+    margin: 0 1.5rem;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+    background-color: #5cb85c; /* 호버 시 색상 변경 */
+    color: #fff;
+}
+
+/* 메인 콘텐츠 스타일 */
+.main-content {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.hero-section {
+    background-color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.hero-section h2 {
+    color: #28a745;
+    font-size: 2.5em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    margin-bottom: 1rem;
+}
+
+.class-photo-placeholder {
+    margin-top: 2rem;
+    border: 2px dashed #ccc;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.class-photo-placeholder img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* 이미지 하단 여백 제거 */
+    margin: 0 auto 1rem auto; /* 가운데 정렬 및 하단 여백 */
+    border-radius: 5px;
+}
+
+/* 푸터 스타일 */
+.main-footer {
+    background-color: #222;
+    color: #aaa;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    font-size: 0.9em;
+}
