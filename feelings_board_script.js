@@ -7,8 +7,8 @@ import { createClient } from "https://cdn.skypack.dev/@supabase/supabase-js";
 // ----------------------------------------------------
 // 1. Supabase 클라이언트 초기화 (여기에 위에서 복사한 URL과 Anon Key를 붙여넣으세요!)
 // ----------------------------------------------------
-const SUPABASE_URL = 'https://nuymzoobfviyzyazzojb.supabase.co'; // 예: 'https://abcdefghijk.supabase.co'
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im51eW16b29iZnZpeXp5YXp6b2piIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI0OTMyNjYsImV4cCI6MjA2ODA2OTI2Nn0.pKut2f51x6PS9zblz34Ein3AMuUFw7lZLwENKNEg8x8'; // 예: 'eyJhbGciOiJIUzI1Ni...'
+const SUPABASE_URL = 'https://piwxdwmjkxdvvxttvsvw.supabase.co'; // 예: 'https://abcdefghijk.supabase.co'
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpd3hkd21qa3hkdnZ4dHR2c3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMzNTQ0MjAsImV4cCI6MjA2ODkzMDQyMH0.zm9fmHG6GCbS6pX8vliq8h4Bkpz6r45t8UjKVu_fJro'; // 예: 'eyJhbGciOiJIUzI1Ni...'
 // ----------------------------------------------------
 
 // Supabase 클라이언트 초기화를 바로 실행합니다.
