@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>하현성</title>
+  <link rel="stylesheet" href="hhs_style.css">
+</head>
+<body>
+
+  <h1>하현성 홈페이지</h1>
+
+  <div class="selector-container">
+    <div class="selector" onclick="showContent(1)">자기소개</div>
+    <div class="selector" onclick="showContent(2)">좋아하는 것</div>
+    <div class="selector" onclick="showContent(3)">진로 소개</div>
+    <div class="selector" onclick="showContent(4)">업 앤 다운 게임</div>
+  </div>
+
+  <div id="content1" class="content">
+    <h2>👤 자기소개</h2>
+    <p>저는 흥진고등학교 3학년 12반 하현성입니다. 2007년생에 돼지 띠이고 생일은 12월 15일 입니다.</p>
+  </div>
+
+  <div id="content2" class="content">
+    <h2>좋아하는 것들</h2>
+    <ul>
+      <li>축구 경기 시청</li>
+      <li>python, c언어 공부</li>
+      <li>음악 감상</li>
+      <li>게임 플레이</li>
+    </ul>
+  </div>
+
+  <div id="content3" class="content">
+    <h2>🎓 진로 소개</h2>
+    <p>AI 기술을 활용하는 소프트웨어 엔지니어가 되는 것이 제 목표입니다. 특히 금융 AI와 의료 AI등 인공지능에 관심이 많습니다. 이를 위해 Python, 머신러닝, 데이터 분석을 공부하고 있습니다.</p>
+  </div>
+
+  <div id="content4" class="content">
+    <h2>🎮 숫자 맞추기 게임</h2>
+    <div id="game-area">
+      <p>1부터 10 사이의 숫자를 맞춰보세요. 정답을 맞춘다면 시도 횟수가 초기화 됩니다.</p>
+      <input type="number" id="guess" min="1" max="10">
+      <br>
+      <button onclick="checkGuess()">확인</button>
+      <p id="result"></p>
+      <p id="attempts-info"></p>
+    </div>
+  </div>
+
+  <script>
+    // 콘텐츠 전환
+    function showContent(num) {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`content${i}`).classList.remove('active');
+      }
+      document.getElementById(`content${num}`).classList.add('active');
+    }
+
+    // 숫자 맞추기 게임
+    let answer = Math.floor(Math.random() * 10) + 1;
+    let attempts = 0;
+
+    function resetGame() {
+      answer = Math.floor(Math.random() * 10) + 1;
+      attempts = 0;
+      document.getElementById('guess').value = '';
+      document.getElementById('result').innerText = '';
+      document.getElementById('attempts-info').innerText = '';
+    }
+
+    function checkGuess() {
+      const guess = parseInt(document.getElementById('guess').value);
+      const result = document.getElementById('result');
+      const info = document.getElementById('attempts-info');
+
+      if (isNaN(guess)) {
+        result.innerText = "숫자를 입력해주세요.";
+        return;
+      }
+
+      attempts++;
+
+      if (guess === answer) {
+        result.innerText = `정답입니다! 🎉 정답은 ${answer}였고, ${attempts}번 만에 맞췄어요.`;
+        info.innerText = "새 게임을 시작했어요. 다시 맞춰보세요!";
+        resetGame();
+      } else if (guess < answer) {
+        result.innerText = "업";
+      } else {
+        result.innerText = "다운";
+      }
+
+      info.innerText = `시도 횟수: ${attempts}`;
+    }
+  </script>
+
+</body>
+</html>
+

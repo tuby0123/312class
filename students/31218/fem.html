@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>게임에서의 FEM (유한 요소법)</title>
+  <link rel="stylesheet" href="fem.css" />
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>게임에서의 FEM(유한 요소법)</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>FEM이란?</h2>
+      <p>FEM(유한 요소법)은 Finite Element Method의 약자로, 물체나 구조의 복잡한 물리 현상을 수치적으로 해석하는 방법이다. 게임에서는 물체의 변형, 파괴, 응력 전달과 같은 물리 효과를 사실감 있게 구현하기 위해 사용된다.</p>
+    </section>
+
+    <section>
+      <h2>FEM의 장단점</h2>
+      <ul>
+        <li><strong>장점</strong> 
+          <ul>
+            <li>복잡한 구조와 재료 특성까지 정밀하게 표현 가능</li>
+            <li>현실감 있는 변형 및 파괴 시뮬레이션 가능</li>
+            <li>과학적 모델을 기반의 높은 정확도</li>
+          </ul>
+        </li>
+        <li><strong>단점</strong>
+          <ul>
+            <li>많은 계산량으로 인해 실시간 연산 시 부담이 큼</li>
+            <li>구현이 복잡하고 메쉬 처리 등 선행 작업 필요</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>물리 문제의 수학적 표현 (편미분방정식)</h2>
+      <div class="math-box">
+        \[
+        \rho \frac{\partial^2 u}{\partial t^2} = \nabla \cdot \sigma + f
+        \]
+      </div>
+      <p>이 식은 물체 내부의 운동 방정식이다. 밀도(ρ)와 가속도(\( \frac{\partial^2 u}{\partial t^2} \))에 대한 힘의 평형을 나타낸다. 우변은 응력의 발산과 외부 힘을 나타낸다.</p>
+    </section>
+
+    <section>
+      <h2>약한 형식으로 변환</h2>
+      <div class="math-box">
+        \[
+        \int_{\Omega} \delta u \cdot \rho \frac{\partial^2 u}{\partial t^2} \, d\Omega =
+        \int_{\Omega} \delta u \cdot f \, d\Omega +
+        \int_{\Omega} \nabla \delta u : \sigma \, d\Omega
+        \]
+      </div>
+      <p>이 식에서는 편미분방정식을 직접 푸는 것이 어려우므로, 식을 전체 영역(Ω)에 대해 적분하여 약한 형식(변분형)으로 바꾼다. FEM에서는 이 형태로 해를 구한다.</p>
+    </section>
+
+    <section>
+      <h2>메쉬 분할과 근사</h2>
+      <div class="math-box">
+        \[
+        u(x) \approx \sum_{i=1}^n N_i(x) u_i
+        \]
+      </div>
+      <p>연속된 변위 함수를 다항식 형태의 shape function \( N_i(x) \)을 이용해 근사한다. 각 \( u_i \)는 요소의 노드에서의 변위 값을 나타낸다.</p>
+    </section>
+
+    <section>
+      <h2>행렬 방정식으로 구성</h2>
+      <div class="math-box">
+        \[
+        M \ddot{U} + K U = F
+        \]
+      </div>
+      <p>이 식은 전체 구조의 FEM 시스템을 행렬 형태로 정리한 것이다. M은 질량 행렬, K는 강성 행렬, F는 외력, \( \ddot{U} \)는 변위의 가속도를 나타낸다.</p>
+    </section>
+
+    <section>
+      <h2>게임에서의 FEM</h2>
+      <ul>
+        <li>차량 충돌 시 차체가 찌그러지는 모습</li>
+        <li>캐릭터나 오브젝트가 충돌하고 부서지는 장면</li>
+        <li>게임 개발 툴에서 제공되는 FEM을 응용한 파괴, 옷감, 근육 등의 시뮬레이션</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

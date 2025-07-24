@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>게임에서의 라그랑주 역학</title>
+  <link rel="stylesheet" href="./fem.css" />
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>게임에서의 라그랑주 역학</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>라그랑주 역학이란?</h2>
+      <p>
+        라그랑주 역학(Lagrangian Mechanics)은 고전 역학의 한 형태로, 뉴턴의 힘 중심 방식과 달리 
+        에너지 차이에 기반해 물체의 운동을 기술한다. 운동 에너지(\( T \))와 퍼텐셜 에너지(\( V \))의 차인 
+        라그랑지안 \( L \)을 중심으로 시스템의 운동 방정식을 유도한다.
+      </p>
+    </section>
+
+    <section>
+      <h2>라그랑지안의 정의</h2>
+      <div class="math-box">
+        \[
+        L(q, \dot{q}, t) = T - V
+        \]
+      </div>
+      <p>
+        라그랑지안 \( L \)은 운동 에너지 \( T \)에서 퍼텐셜 에너지 \( V \)를 뺀 값이다. 
+        여기서 \( q \)는 일반화된 좌표, \( \dot{q} \)는 속도이다. 
+        이 함수는 시스템 전체의 운동을 하나의 식으로 통합할 수 있게 한다.
+      </p>
+    </section>
+
+    <section>
+  <h2>라그랑주 역학의 장단점</h2>
+  <ul>
+    <li><strong>장점</strong>
+      <ul>
+        <li>복잡한 시스템도 에너지 관점으로 통합적으로 표현 가능</li>
+        <li>일반화 좌표를 사용하므로 제약 조건 처리에 유리</li>
+        <li>연결된 물체(다물체 시스템)나 비선형 시스템에 적합</li>
+        <li>힘을 직접 계산하지 않아도 운동 방정식을 유도할 수 있음</li>
+      </ul>
+    </li>
+    <li><strong>단점</strong>
+      <ul>
+        <li>기초 이해를 위해 수학적 배경이 많이 필요함</li>
+        <li>충돌, 접촉 같은 비연속적인 현상 표현에는 복잡함</li>
+        <li>수치적 해석 시 계산량이 많고 구현 난이도 높음</li>
+        <li>직관적인 힘 표현이 필요한 경우에는 뉴턴 방식보다 불편함</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+
+    <section>
+      <h2>오일러-라그랑주 방정식</h2>
+      <div class="math-box">
+        \[
+        \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{q}} \right) - \frac{\partial L}{\partial q} = 0
+        \]
+      </div>
+      <p>
+        이 방정식은 주어진 라그랑지안으로부터 실제 물리계가 따르는 경로를 유도하는 식이다. 
+        시스템의 자유도 수만큼 이 방정식을 세워 해를 구할 수 있다.
+      </p>
+    </section>
+
+    <section>
+      <h2>게임에서의 활용</h2>
+      <ul>
+        <li>캐릭터의 뼈대 시스템처럼 연결된 물체의 운동을 자연스럽게 표현 가능</li>
+        <li>힘이 아닌 에너지 기반 접근이기 때문에 제약 조건 처리에 효과적</li>
+        <li>Ragdoll, Cloth Simulation, 근육 시뮬레이션 등 고급 물리 시스템에 사용</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

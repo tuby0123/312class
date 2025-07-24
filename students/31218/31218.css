@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box {
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.box:hover {
+  background-color: #f0f0f0;
+}

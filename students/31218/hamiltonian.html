@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>게임에서의 해밀턴 역학</title>
+  <link rel="stylesheet" href="fem.css" />
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>게임에서의 해밀턴 역학</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>해밀토니안의 정의</h2>
+      <div class="math-box">
+        \[
+        H(q, p, t) = \sum_i p_i \dot{q}_i - L(q, \dot{q}, t)
+        \]
+      </div>
+      <p>
+        해밀토니안 \( H \)은 위치 좌표 \( q \)와 운동량 \( p \)를 변수로 하는 에너지 함수이다.
+        라그랑지안 \( L \)에서 변환되어 나오며, 시스템의 총 에너지를 나타낸다.
+      </p>
+      
+      <h2>장단점</h2>
+      <ul>
+        <li><strong>장점</strong>
+          <ul>
+            <li>에너지 기반으로 시스템 전체를 통합적으로 다룸</li>
+            <li>복잡한 시스템에서도 수학적으로 깔끔한 해석 가능</li>
+            <li>물리 법칙과 대칭성을 쉽게 적용할 수 있음</li>
+          </ul>
+        </li>
+        <li><strong>단점</strong>
+          <ul>
+            <li>수학적 난이도가 높아 이해와 구현에 시간 필요</li>
+            <li>비선형성 강한 시스템에서 수치적 불안정성 발생 가능</li>
+            <li>뉴턴 역학에 비해 직관적이지 않아 물리적 감각 습득이 어려움</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+      <h2>해밀턴 방정식</h2>
+      <div class="math-box">
+        \[
+        \dot{q}_i = \frac{\partial H}{\partial p_i}, \quad
+        \dot{p}_i = -\frac{\partial H}{\partial q_i}
+        \]
+      </div>
+      <p>
+        이 방정식은 시스템 상태 변수인 \( q_i \)와 \( p_i \)가 시간에 따라 어떻게 변화하는지 나타낸다.
+        복잡한 역학계의 운동을 효과적으로 해석할 수 있다.
+      </p>
+
+      <h2>게임에서의 활용</h2>
+      <ul>
+        <li>에너지 보존과 대칭성 분석에 뛰어나 고성능 물리 엔진에 적합함</li>
+        <li>시간 진화 문제를 안정적이고 정확하게 다룰 수 있음</li>
+        <li>제약 조건을 포함한 복잡한 시스템 운동 방정식 구성에 활용</li>
+        <li>최적화 알고리즘과 결합해 물리 시뮬레이션 효율을 향상시킴</li>
+      </ul>
+
+
+  </main>
+
+</body>
+</html>

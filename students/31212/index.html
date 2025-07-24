@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>IT 용어 사전</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    #searchBar {
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+      display: block;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .term-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .term-card {
+      background-color: #fff;
+      padding: 20px;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .term-card:hover {
+      transform: translateY(-5px);
+    }
+    .term-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #0077cc;
+    }
+    .term-definition {
+      font-size: 14px;
+      color: #555;
+    }
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>IT 용어 사전</h1>
+  <input type="text" id="searchBar" placeholder="용어를 검색해보세요.">
+
+  <div class="term-container" id="termList">
+    <div class="term-card"><div class="term-title">HTML</div><div class="term-definition">웹 페이지의 구조를 만드는 마크업 언어입니다.</div></div>
+    <div class="term-card"><div class="term-title">CSS</div><div class="term-definition">웹 페이지의 디자인과 스타일을 지정하는 언어입니다.</div></div>
+    <div class="term-card"><div class="term-title">JavaScript</div><div class="term-definition">웹 페이지에 동적인 기능을 추가하는 프로그래밍 언어입니다.</div></div>
+    <div class="term-card"><div class="term-title">CPU</div><div class="term-definition">컴퓨터의 두뇌 역할을 하는 중앙처리장치입니다.</div></div>
+    <div class="term-card"><div class="term-title">IP 주소</div><div class="term-definition">인터넷상에서 장치를 식별하는 고유한 주소입니다.</div></div>
+    <div class="term-card"><div class="term-title">클라우드</div><div class="term-definition">인터넷을 통해 서버, 스토리지, 서비스를 제공하는 기술입니다.</div></div>
+    <div class="term-card"><div class="term-title">URL</div><div class="term-definition">웹사이트의 주소를 나타내는 문자열입니다.</div></div>
+    <div class="term-card"><div class="term-title">DNS</div><div class="term-definition">도메인 이름을 IP 주소로 바꿔주는 시스템입니다.</div></div>
+    <div class="term-card"><div class="term-title">RAM</div><div class="term-definition">컴퓨터에서 데이터를 일시적으로 저장하는 빠른 메모리입니다.</div></div>
+    <div class="term-card"><div class="term-title">SSD</div><div class="term-definition">기존 하드디스크보다 빠르고 조용한 저장장치입니다.</div></div>
+    <div class="term-card"><div class="term-title">OS (운영체제)</div><div class="term-definition">컴퓨터를 작동시키는 기본 소프트웨어입니다. (예: Windows, macOS)</div></div>
+    <div class="term-card"><div class="term-title">API</div><div class="term-definition">프로그램들이 서로 소통할 수 있게 하는 인터페이스입니다.</div></div>
+    <div class="term-card"><div class="term-title">Algorithm</div><div class="term-definition">문제를 해결하기 위한 절차나 규칙입니다.</div></div>
+    <div class="term-card"><div class="term-title">Git</div><div class="term-definition">코드의 변경 이력을 관리하는 도구입니다.</div></div>
+    <div class="term-card"><div class="term-title">Open Source</div><div class="term-definition">누구나 자유롭게 사용하고 수정할 수 있는 소프트웨어입니다.</div></div>
+    <div class="term-card"><div class="term-title">IoT (사물인터넷)</div><div class="term-definition">인터넷에 연결된 기기들이 데이터를 주고받는 기술입니다.</div></div>
+    <div class="term-card"><div class="term-title">빅데이터</div><div class="term-definition">매우 크고 복잡한 데이터 집합을 의미합니다.</div></div>
+    <div class="term-card"><div class="term-title">해킹</div><div class="term-definition">컴퓨터 시스템에 무단으로 침입하거나 조작하는 행위입니다.</div></div>
+    <div class="term-card"><div class="term-title">2FA (이중 인증)</div><div class="term-definition">계정을 보호하기 위해 두 가지 인증 수단을 사용하는 방법입니다.</div></div>
+    <div class="term-card"><div class="term-title">프론트엔드</div><div class="term-definition">사용자가 직접 보는 웹 화면을 구성하는 기술입니다.</div></div>
+    <div class="term-card"><div class="term-title">백엔드</div><div class="term-definition">데이터 처리와 서버 기능을 담당하는 기술입니다.</div></div>
+    <div class="term-card"><div class="term-title">클라이언트</div><div class="term-definition">서버에 요청을 보내는 사용자 쪽 프로그램입니다.</div></div>
+    <div class="term-card"><div class="term-title">서버</div><div class="term-definition">클라이언트에게 정보를 제공하는 컴퓨터입니다.</div></div>
+  </div>
+
+  <div class="footer">31212 이세영</div>
+
+  <script>
+    const searchBar = document.getElementById("searchBar");
+    const termCards = document.querySelectorAll(".term-card");
+
+    searchBar.addEventListener("input", () => {
+      const keyword = searchBar.value.toLowerCase();
+      termCards.forEach(card => {
+        const title = card.querySelector(".term-title").textContent.toLowerCase();
+        const definition = card.querySelector(".term-definition").textContent.toLowerCase();
+        card.style.display = title.includes(keyword) || definition.includes(keyword) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
