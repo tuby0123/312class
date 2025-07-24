@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>자동차 시뮬레이션 게임</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <h1>🚗 자동차 시뮬레이션 게임</h1>
+    <p>31206 문현진</p>
+  </header>
+
+  <div class="container">
+    <h2>게임 소개</h2>
+    <p>
+      이 게임은 Unity와 C#을 활용하여 개발한 자동차 시뮬레이션 게임입니다.
+      실제 차량과 유사한 조향, 가속, 브레이크, 시동, 오디오 등을 구현하였습니다.
+    </p>
+
+    <img class="screenshot" src="carsim.png" alt="게임 스크린샷" />
+
+    <h2>게임 플레이 영상</h2>
+    <div class="embed-container">
+      <iframe src="https://www.youtube.com/embed/7Q6jnQb5-Cw" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <a class="button" href="https://m.blog.naver.com/wjoh0315/222060462685" target="_blank">참고 링크</a>
+
+    <h2>게임 코드 설명</h2>
+    <p>
+      자동차의 모든 움직임은 <strong>CarController.cs</strong> 스크립트로 제어됩니다. 주요 기능은 다음과 같습니다:
+    </p>
+
+    <ul>
+      <li><strong>WheelControlInfo 구조체:</strong> 구동력, 제동력, 조향각도, 바퀴 설정 포함</li>
+      <li><strong>StartEngine / StopEngine:</strong> 시동 켜기/끄기 처리 및 오디오 연동</li>
+      <li><strong>HandleMotor:</strong> 속도에 따라 가속 토크를 조절하여 최고속도 제한</li>
+      <li><strong>HandleSteering:</strong> 좌우 입력에 따라 앞바퀴의 조향각 조절</li>
+      <li><strong>HandleBrake:</strong> 브레이크 입력에 따라 제동력 적용</li>
+      <li><strong>UpdateWheelVisuals:</strong> WheelCollider의 위치/회전을 모델에 반영</li>
+    </ul>
+
+    <h3>🚗 예시 코드: 시동 기능</h3>
+    <pre><code>
+IEnumerator StartEngine()
+{
+    if (isStarting) yield break;
+    isStarting = true;
+
+    if (carAudioController != null)
+        yield return StartCoroutine(carAudioController.StartEngine());
+    else
+        yield return null;
+
+    isEngineOn = true;
+    isStarting = false;
+}
+    </code></pre>
+
+    <h2>개발자 소개</h2>
+    <p>
+      이 게임과 웹사이트는 고등학교 3학년 <strong>홍길동</strong>이 개발했습니다.<br/>
+      Unity, C#, 오디오 믹싱 및 게임 물리 구현을 직접 설계하였습니다.
+    </p>
+
+    <p>
+      📧 이메일: mswyoon@gmail.com<br/>
+    </p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 문현진 - 자동차 시뮬레이션 게임</p>
+  </footer>
+
+</body>
+</html>
