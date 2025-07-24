@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>31208 송주영</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img src="bbargan.png" alt="프로필 사진" class="profile-pic">
+      <h1>31208 송주영</h1>
+      <p class="tagline"> "세상에 나쁜게임은 없다. 만약 있다면 내가 때려 고쳐보겠다."</p>
+    </header>
+
+    <section class="about">
+      <h2>간단한 소개글</h2>
+      <ol>
+        <li>흥진고 3학년 12반 8번 송주영입니다.</li>
+        <li>목표는 게임 프로그래머로 세상에 이름알리기</li>
+        <li>지금까지 'SPR', '공 튀기기', 'deep bunker', 'sweeper'등을 만들어 보았습니다.</li>
+      </ol>
+    </section>
+
+    <section class="skills">
+      <h2>현재까지 사용해본 기술</h2>
+      <ul>
+        <li>HTML</li>
+        <li>Python</li>
+        <li>Unity(C#)</li>
+        <li>C++</li>
+        <li>아두이노</li>
+        <li>스크레치</li>
+        <li>마이크로비트</li>
+      </ul>
+    </section>
+
+<section class="game">
+  <h2>미니 퍼즐 게임(예전에 만든게임)</h2>
+  <p>블럭을 밀어 도착점에 도달하세요!</p>
+
+  <div class="game-wrapper">
+    <canvas id="gameCanvas" width="384" height="384"></canvas>
+
+    <div class="controls">
+      <button onclick="movePlayer(0, -1)">⬆️</button>
+      <div>
+        <button onclick="movePlayer(-1, 0)">⬅️</button>  
+        <button onclick="movePlayer(1, 0)">➡️</button>
+      </div>
+      <button onclick="movePlayer(0, 1)">⬇️</button>
+    </div>
+  </div>
+</section>
+
+<section class="game2">
+<div id="typing-game" style="margin-top: 40px;">
+  <h2>미니 SPR(Speed Programming Race)</h2>
+  <p>아래에 보이는 Python 단어를 정확히 입력하세요.</p>
+  <div id="python-word" style="font-size: 24px; font-weight: bold; color: blue;"></div>
+  <input type="text" id="user-input" placeholder="정확히 입력하세요" />
+  <button onclick="checkTyping()">제출</button>
+  <p id="typing-result"></p>
+  <p>점수: <span id="typing-score">0</span></p>
+</div>
+</section>
+
+    <section class="contact">
+      <h2> 연락처</h2>
+      <p>Email: <a>zzzsss1359@gmail.com</a></p>
+      <p>전화번호: <a>010-7299-6929</a></p>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 making by Song Juyoung.
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

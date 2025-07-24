@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>게임 엔진과 대표 게임 소개</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: #000; /* 검은색 배경 */
+    color: #eee; /* 밝은 글자색 */
+  }
+  h1, h3 {
+    color: #1abc9c; /* 청록색 */
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  h3 {
+    margin: 0 0 10px 0;
+    padding-left: 20px;
+  }
+  .engine-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 1120px; /* 350*3 + 20*2 */
+    margin: auto;
+  }
+  section.engine-section {
+    background: #121212;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 15px #1abc9c;
+    width: 350px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #1abc9c;
+    margin-bottom: 10px;
+  }
+  .engine-info {
+    font-style: italic;
+    color: #bbb;
+    margin-bottom: 15px;
+  }
+  ul {
+    padding-left: 20px;
+    margin-top: 0;
+  }
+  li {
+    margin-bottom: 12px;
+  }
+  .game-title {
+    font-weight: bold;
+    color: #eee;
+    cursor: help;
+    position: relative;
+  }
+  .game-title::after {
+    content: attr(data-desc);
+    position: absolute;
+    left: 0;
+    bottom: 125%;
+    background: rgba(26, 188, 156, 0.9);
+    color: #000;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 0.9em;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .game-title:hover::after {
+    opacity: 1;
+  }
+  a {
+    color: #1abc9c;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .official-link {
+    margin-top: 15px;
+  }
+  .official-link a {
+    font-weight: bold;
+  }
+  #learn-section {
+    max-width: 1100px; /* 엔진 칸 3개 너비 + 간격 */
+    margin: 0 auto;
+    background: #121212;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px #1abc9c;
+    box-sizing: border-box;
+    clear: both;
+    color: #eee;
+    position: relative;
+  }
+  #learn-section hr {
+    width: 100%;
+    border: none;
+    border-top: 2px solid #1abc9c;
+    margin: 20px 0 0 0;
+  }
+</style>
+</head>
+<body>
+<h1>게임 엔진과 대표 게임 소개</h1>
+
+<div class="engine-container">
+  <section class="engine-section">
+    <h2>Unity</h2>
+    <p class="engine-info">
+      개발사: Unity Technologies | 출시연도: 2005년 | 지원 플랫폼: Windows, Mac, 모바일, 콘솔 등 다수
+    </p>
+    <p>Unity는 C#을 사용하는 다목적 게임 엔진으로, 2D와 3D 게임 제작 모두에 강점을 가지고 있습니다.  
+      직관적인 인터페이스와 풍부한 에셋 스토어, 방대한 커뮤니티 덕분에 초보자부터 전문가까지 폭넓게 사용됩니다.</p>
+    <p><strong>대표 게임:</strong></p>
+    <ul>
+      <li><span class="game-title" data-desc="GPS 기반 증강현실(AR) 게임으로 전 세계적으로 폭발적인 인기를 얻었습니다.">포켓몬 고</span></li>
+      <li><span class="game-title" data-desc="수중 탐험과 생존을 소재로 한 3D 오픈 월드 게임. 아름다운 해양 환경이 특징입니다.">서브노티카</span></li>
+      <li><span class="game-title" data-desc="1930년대 만화 스타일 그래픽과 높은 난이도로 인기를 얻은 2D 플랫폼 게임입니다.">컵헤드</span></li>
+    </ul>
+    <p class="official-link"><a href="https://unity.com/" target="_blank" rel="noopener noreferrer">Unity 공식 홈페이지</a></p>
+  </section>
+
+  <section class="engine-section">
+    <h2>Unreal Engine</h2>
+    <p class="engine-info">
+      개발사: Epic Games | 출시연도: 1998년 (첫 버전), 현재 UE5 | 지원 플랫폼: Windows, 콘솔, 모바일 등
+    </p>
+    <p>Unreal Engine은 C++와 비주얼 스크립팅(Blueprint)을 지원하며, 고퀄리티 3D 그래픽 제작에 특화된 엔진입니다.  
+      강력한 렌더링 파이프라인과 물리 엔진 덕분에 AAA급 게임 개발에 많이 사용됩니다.</p>
+    <p><strong>대표 게임:</strong></p>
+    <ul>
+      <li><span class="game-title" data-desc="전 세계적으로 가장 유명한 배틀로얄 FPS 게임 중 하나입니다.">플레이어언노운즈 배틀그라운드 (배틀그라운드)</span></li>
+      <li><span class="game-title" data-desc="다양한 플랫폼에서 즐길 수 있으며, 빠른 건축과 전투가 특징인 배틀로얄 게임입니다.">포트나이트</span></li>
+      <li><span class="game-title" data-desc="높은 그래픽 퀄리티와 깊이 있는 스토리텔링으로 사랑받는 3인칭 슈팅 게임입니다.">기어스 오브 워</span></li>
+    </ul>
+    <p class="official-link"><a href="https://www.unrealengine.com/" target="_blank" rel="noopener noreferrer">Unreal Engine 공식 홈페이지</a></p>
+  </section>
+
+  <section class="engine-section">
+    <h2>Godot</h2>
+    <p class="engine-info">
+      개발사: 커뮤니티 기반 오픈소스 프로젝트 | 출시연도: 2014년 | 지원 플랫폼: Windows, Linux, Mac, 모바일 등
+    </p>
+    <p>Godot는 무료 오픈소스 게임 엔진으로, 가볍고 빠른 개발 환경을 제공합니다. 특히 2D 게임에 특화되어 있으며, GDScript라는 간결한 스크립트 언어를 사용합니다.</p>
+    <p><strong>대표 게임:</strong></p>
+    <ul>
+      <li><span class="game-title" data-desc="독특한 아트 스타일과 유머러스한 스토리가 돋보이는 어드벤처 게임입니다.">데포니아</span></li>
+      <li><span class="game-title" data-desc="클래식 RPG 스타일의 인디 게임으로 현재 개발 중입니다.">킹덤스 오브 더 덤프</span></li>
+      <li><span class="game-title" data-desc="그래픽 어드벤처 장르로, 스토리 중심의 게임입니다.">더 인터랙티브 어드벤처 오브 도그 멘돈사 &amp; 피자보이</span></li>
+    </ul>
+    <p class="official-link"><a href="https://godotengine.org/" target="_blank" rel="noopener noreferrer">Godot 공식 홈페이지</a></p>
+  </section>
+</div>
+
+<section id="learn-section">
+  <h2>자기소개글</h2>
+  <P>5
+    저는 흥진고등학교 3학년 12반 조준영입니다. 어렸을때부터 게임하는것과 <br />
+    스크래치등으로 간단한 게임을 만드는것을 좋아했었기 때문에 게임 개발자를 꿈꾸게 되었습니다.<br />
+    이번에는 html을 이용하여 게임제작에 있어 핵심 역할을 하는 게임 엔진들에 대해 소개하는 웹페이지를 만들었습니다.
+  </P>
+  
+  <hr />
+  <h2>내가 좋아하는 것들</h2>
+  <p>
+    <span style="color:#1abc9c; font-weight: bold;">스포츠</span> 축구, 야구, F1 등 다양한 경기를 즐겨 봅니다<br />
+    <span style="color:#e67e22; font-weight: bold;">음악</span> 밴드음악을 즐겨 듣습니다<br />
+    <span style="color:#9b59b6; font-weight: bold;">게임</span> 스포츠게임, FPS게임, RPG게임 등 다양한 장르의 게임을 좋아합니다 
+  </p>
+  <hr />
+  <h2>내가 배우고 싶은 점</h2>
+  <p>
+    Unity, Unreal Engine, Godot과 같은 다양한 게임 엔진의 특징과 장단점을 깊이 이해하고,<br />
+    이를 바탕으로 사람들에게 즐거움을 줄 수 있는 게임을 만드는 개발자가 되고 싶습니다.<br />
+    게임 개발 과정에서 여러 요소들을 배우며, 내 생각과 아이디어를 구현하는 능력을 키우고 싶습니다.<br />
+    또한, 문제 해결 능력도 함께 발전시켜, 완성도 높은 게임을 만들고 싶습니다.<br />
+    앞으로 꾸준히 공부하고 실습하며, 많은 사람들이 즐겁게 즐길 수 있는 멋진 게임을 만드는 꿈을 이루고자 합니다.
+  </p>
+</section>
+
+</body>
+</html>

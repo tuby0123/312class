@@ -1,0 +1,159 @@
+/* body 기본 스타일 */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #7cb6e9;
+  color: #000000;
+  line-height: 1.6;
+}
+
+
+/* container는 중앙 정렬 및 최대 너비 */
+.container {
+  max-width: 800px;
+  margin: 40px auto 0 auto; /* 위쪽 40px 여백, 좌우 중앙 */
+  padding: 40px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  text-align: left;
+}
+
+/* 게임 레이아웃 및 컨트롤 스타일 (기존 유지) */
+.game-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls div {
+  display: flex;
+  gap: 10px;
+}
+
+.controls button {
+  font-size: 24px;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  background-color: #4a90e2;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #357abd;
+}
+
+/* header, profile pic, 타이틀 등 기존 스타일 유지 */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #4a90e2;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin: 16px 0 4px;
+  font-size: 32px;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border: 4px solid #333;
+  background-color: #f5f5f5;
+}
+
+.tagline {
+  font-size: 24px;
+  color: #666;
+  font-style: normal; /* 'bond' 오타 수정 */
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+section h2 {
+  color: #a1ec55;
+  margin-bottom: 12px;
+}
+
+.skills ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  background: #f0f8ff;
+  margin: 6px 0;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border-left: 4px solid #4a90e2;
+}
+
+.contact a {
+  color: #e11919;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* footer: 컨테이너 너비에 맞춰 중앙 정렬 */
+footer {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #4f4f4f;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+/* 타자게임 관련 요소 */
+#wordDisplay {
+  font-size: 32px;
+  margin: 20px 0;
+  color: #333;
+}
+
+#userInput {
+  font-size: 20px;
+  padding: 10px;
+  width: 250px;
+}
+
+#info {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+#gameOver {
+  margin-top: 20px;
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
