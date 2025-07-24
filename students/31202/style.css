@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #1e1e1e, #2e2e2e);
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: background 0.3s, color 0.3s;
+}
+
+.light-mode {
+  background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+  color: black;
+}
+
+.window {
+  background: #111;
+  border: 2px solid #444;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #8f8f8f;
+  padding: 20px;
+  max-width: 500px;
+  min-width: 200px;
+  resize: both;
+  overflow: auto;
+  transition: background 0.3s, color 0.3s;
+}
+
+.light-mode .window {
+  background: #fff;
+  color: black;
+  border: 2px solid #ccc;
+}
+
+.window.main {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.icon-row button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.icon-row button:hover {
+  background: #34495e;
+}
+
+.popup {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 10;
+}
+
+.window-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #555;
+  margin-bottom: 10px;
+  cursor: move;
+}
+
+.window-header button {
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.window-body {
+  line-height: 1.5;
+  transition: font-size 0.2s ease;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>흥진고 학사일정 체크리스트 made by 31219 추영훈</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 30px;
+      background: #f5f7fa;
+      color: #333;
+    }
+    h1 {
+      font-size: 28px;
+      color: #004080;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #555;
+    }
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+    li {
+      background: #ffffff;
+      margin: 10px 0;
+      padding: 12px 15px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+    }
+    input[type="checkbox"] {
+      margin-right: 12px;
+      transform: scale(1.2);
+    }
+    iframe {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    #add-form {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    #add-form input[type="text"],
+    #add-form input[type="date"] {
+      padding: 8px;
+      font-size: 14px;
+    }
+    #add-form button {
+      padding: 8px 16px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #add-form button:hover {
+      background-color: #0066cc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📅 흥진고 2025년 학사일정 체크리스트</h1>
+
+  <h2>✔️ 주요 일정 체크</h2>
+  <ul id="schedule-list"></ul>
+
+  <script>
+    const schedules = [
+      { date: "2025-03-02", event: "입학식 / 시업식" },
+      { date: "2025-03-04", event: "학부모총회" },
+      { date: "2025-04-10", event: "학력평가 (전학년)" },
+      { date: "2025-06-03", event: "1학기 중간고사 시작" },
+      { date: "2025-06-07", event: "1학기 중간고사 종료" },
+      { date: "2025-07-15", event: "기말고사 시작" },
+      { date: "2025-07-19", event: "기말고사 종료" },
+      { date: "2025-07-24", event: "여름방학 시작" },
+      { date: "2025-08-26", event: "2학기 개학식" },
+      { date: "2025-09-17", event: "2학기 중간고사 시작" },
+      { date: "2025-09-22", event: "2학기 중간고사 종료" },
+      { date: "2025-11-18", event: "2학기 기말고사 시작" },
+      { date: "2025-11-22", event: "2학기 기말고사 종료" },
+      { date: "2025-12-24", event: "겨울방학 시작" },
+      { date: "2026-01-05", event: "졸업식" }
+    ];
+
+    const list = document.getElementById("schedule-list");
+
+    function addScheduleItem(date, event) {
+      const li = document.createElement("li");
+      const cb = document.createElement("input");
+      cb.type = "checkbox";
+      li.appendChild(cb);
+      li.append(` ${date} - ${event}`);
+      list.appendChild(li);
+    }
+
+    schedules.forEach(item => addScheduleItem(item.date, item.event));
+  </script>
+
+  <h2>➕ 일정 추가하기</h2>
+  <form id="add-form" onsubmit="return false;">
+    <input type="date" id="new-date" required>
+    <input type="text" id="new-event" placeholder="일정명 입력" required>
+    <button onclick="handleAdd()">추가</button>
+  </form>
+
+  <script>
+    function handleAdd() {
+      const date = document.getElementById("new-date").value;
+      const event = document.getElementById("new-event").value;
+      if (date && event) {
+        addScheduleItem(date, event);
+        document.getElementById("new-date").value = "";
+        document.getElementById("new-event").value = "";
+      }
+    }
+  </script>
+
+  <h2>🌐 흥진고 공식 학사일정 보기</h2>
+  <iframe
+    src="https://heungjingo.goegu.kr/subList/31000010383"
+    width="100%"
+    height="600"
+    allowfullscreen>
+  </iframe>
+
+</body>
+</html>

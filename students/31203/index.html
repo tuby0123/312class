@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>김나윤 자기소개</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & 기본 설정 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* 헤더 (네비게이션 바) */
+    header {
+      background-color: #162415;
+      color: white;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #4CAF50;
+    }
+
+    /* 히어로 섹션 */
+    .hero-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('bg.webp') no-repeat center/cover;
+      text-align: center;
+      color: white;
+      padding-top: 80px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero-content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #ddd;
+    }
+
+    .cta-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #3e8e41;
+    }
+
+    /* 자기소개 페이지들 */
+    .book {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 100px 20px 200px;
+    }
+
+    .page {
+      display: none;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .page.animate-out {
+      animation: rotateRight 1s forwards;
+    }
+
+    @keyframes rotateRight {
+      0% {
+        opacity: 1;
+        transform: perspective(800px) rotateY(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: perspective(800px) rotateY(-120deg) translateZ(150px);
+      }
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #fdfdfd;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style: square;
+    }
+
+    .controls {
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    .controls button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .controls button:hover {
+      background-color: #3e8e41;
+    }
+
+    footer {
+      background-color: #162415;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- 네비게이션 -->
+  <header>
+    <div class="navbar">
+      <div class="logo">나에 대해 소개</div>
+      <ul class="nav-links">
+        <li><a href="#intro">소개</a></li>
+        <li><a href="#hobbies">취미</a></li>
+        <li><a href="#dreams">진로</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 히어로 배경 -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h2>안녕하세요! 저는 김나윤입니다!</h2>
+      <p>인공지능 개발자를 꿈꾸고 있습니다.</p>
+      <a href="#intro" class="cta-button"> 더 알아보기</a>
+    </div>
+  </section>
+
+  <!-- 자기소개 페이지 -->
+  <div class="book">
+    <section class="page active" id="intro">
+      <h2>소개</h2>
+      <p>저는 흥진고등학교에 다니는 31203 김나윤입니다! 제 MBTI는 ISFP입니다.</p>
+      <p>저는 차분하고 책임감 있는 성격입니다. 또한 호기심이 많아 관심 있는 분야를 탐구하는 걸 좋아합니다!</p>
+    </section>
+
+    <section class="page" id="hobbies">
+      <h2>취미 & 좋아하는 것</h2>
+      <ul>
+        <li>🎧 취미: 노래 듣기</li>
+        <li>📘 좋아하는 과목: 수학</li>
+        <li>🌱 관심 있는 분야: 프로그래밍, 환경, 생명</li>
+      </ul>
+    </section>
+
+    <section class="page" id="dreams">
+      <h2>나의 꿈과 진로</h2>
+      <p>저는 "실생활 문제를 해결해서 사람들에게 도움을 주는 인공지능 개발자"가 되고 싶습니다.</p>
+      <p>AI를 활용해 환경 문제나 보건의료 분야에 기여하고 싶습니다!</p>
+    </section>
+  </div>
+
+  <div class="controls">
+    <button onclick="nextPage()">다음으로</button>
+  </div>
+
+  <footer>
+    <p>© 31203 김나윤.</p>
+  </footer>
+
+  <script>
+    let currentPage = 0;
+    const pages = document.querySelectorAll('.page');
+
+    function nextPage() {
+      if (currentPage < pages.length - 1) {
+        pages[currentPage].classList.add('animate-out');
+        setTimeout(() => {
+          pages[currentPage].classList.remove('active', 'animate-out');
+          currentPage++;
+          pages[currentPage].classList.add('active');
+        }, 1000);
+      } else {
+        alert("마지막 페이지입니다");
+      }
+    }
+  </script>
+</body>
+</html>

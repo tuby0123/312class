@@ -1,0 +1,264 @@
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* header 스타일 */
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero 섹션 스타일 */
+.hero {
+    background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* 튜토리얼 섹션 */
+#tutorials {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+#tutorials h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.tutorial-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tutorial-item {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.tutorial-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.tutorial-item p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.tutorial-item a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tutorial-item a:hover {
+    text-decoration: underline;
+}
+
+/* 리소스 섹션 */
+#resources {
+    background-color: #e9ecef;
+    padding: 4rem 0;
+}
+
+#resources h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+#resources p {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#resources ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#resources ul li {
+    background-color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+}
+
+#resources ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+}
+
+#resources ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 게임 개발 뉴스 섹션 */
+#news {
+    padding: 4rem 0;
+    background-color: #fff;
+    text-align: center; /* 중앙 정렬 */
+}
+
+#news h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+#news ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 커뮤니티 섹션 */
+#community {
+    background-color: #f4f4f4;
+    padding: 4rem 0;
+    text-align: center; /* 중앙 정렬 */
+}
+
+#community h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+#community ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 팁/트릭 섹션 */
+#tips {
+    padding: 4rem 0;
+    background-color: #e9ecef;
+    text-align: center; /* 중앙 정렬 */
+}
+
+#tips h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+#tips ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+/* 문의 섹션 */
+#contact {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    margin-bottom: 20px;
+}
+
+address a {
+    color: #333;
+    text-decoration: none;
+}
+
+address a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+

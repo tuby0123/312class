@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI 기반 직업 추천</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>MBTI 기반 직업 추천</h1>
+    </header>
+
+    <main>
+        <section class="mbti-selection">
+            <label for="mbti-select">MBTI 유형 선택:</label>
+            <select id="mbti-select">
+                <option value="">MBTI를 선택해주세요</option>
+                <option value="ENFJ">ENFJ</option>
+                <option value="ENFP">ENFP</option>
+                <option value="ENTJ">ENTJ</option>
+                <option value="ENTP">ENTP</option>
+                <option value="ESFJ">ESFJ</option>
+                <option value="ESFP">ESFP</option>
+                <option value="ESTJ">ESTJ</option>
+                <option value="ESTP">ESTP</option>
+                <option value="INFJ">INFJ</option>
+                <option value="INFP">INFP</option>
+                <option value="INTJ">INTJ</option>
+                <option value="INTP">INTP</option>
+                <option value="ISFJ">ISFJ</option>
+                <option value="ISFP">ISFP</option>
+                <option value="ISTJ">ISTJ</option>
+                <option value="ISTP">ISTP</option>
+            </select>
+        </section>
+
+        <section id="result-display" class="result-display" style="display: none;">
+            <h2>선택된 MBTI: <span id="selected-mbti"></span></h2>
+            <div class="info-item">
+                <h3>1. 추천 직종</h3>
+                <p id="recommended-occupation"></p>
+            </div>
+            <div class="info-item">
+                <h3>2. 추천 직업</h3>
+                <p id="recommended-job"></p>
+            </div>
+            <div class="info-item">
+                <h3>3. 추천 직업의 업무 내용</h3>
+                <p id="job-description"></p>
+            </div>
+            <div class="info-item">
+                <h3>4. 직업 만족도</h3>
+                <p id="job-satisfaction"></p>
+            </div>
+            <div class="info-item">
+                <h3>5. 직업 월급 (단위: 10만 원)</h3>
+                <canvas id="salary-chart"></canvas>
+            </div>
+            <div class="info-item">
+                <h3>6. 직업 방향</h3>
+                <p id="career-direction"></p>
+            </div>
+            <div class="info-item">
+                <h3>7. 유사 직업 3가지</h3>
+                <ul id="similar-jobs"></ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; MBTI 직업 추천</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

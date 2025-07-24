@@ -1,0 +1,216 @@
+아래는 해시 함수 체험, 해시 알고리즘 시각화, 해시테이블 동작 원리 설명까지 포함한 완성된 HTML 파일입니다.
+복사해서 그대로 열면 바로 작동합니다!
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>해시 함수 체험 페이지</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: #fafafa;
+    }
+    h2, h3 {
+      color: #333;
+    }
+    input, textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background: #28a745;
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .output, .explanation, .visual-box {
+      margin-top: 15px;
+      padding: 10px;
+      background: #f1f1f1;
+      border-radius: 8px;
+      word-break: break-word;
+    }
+    .example {
+      font-size: 0.9em;
+      color: #777;
+    }
+    .highlight {
+      background: #ffeeba;
+      padding: 6px;
+      border-radius: 6px;
+    }
+    .step {
+      background: #fff;
+      padding: 10px;
+      margin: 5px 0;
+      border-left: 5px solid #28a745;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔐 해시 함수 체험 페이지 (SHA-256 시각화 + 해시테이블)</h2>
+
+  <div class="explanation">
+    <h3>📘 해시 함수란?</h3>
+    <p><strong>해시 함수</strong>는 아무 길이의 입력 데이터를 고정된 길이의 <span class="highlight">'해시값'</span>으로 바꿔주는 수학적인 변환 도구입니다.</p>
+    <ul>
+      <li>같은 입력은 항상 같은 해시값을 만들어냅니다.</li>
+      <li>해시값만 보고는 원래 값을 알 수 없습니다 (단방향).</li>
+      <li>입력을 아주 조금만 바꿔도 완전히 다른 해시값이 나옵니다.</li>
+    </ul>
+    <p>💡 해시 함수는 <strong>비밀번호 저장</strong>, <strong>파일 위변조 방지</strong>, <strong>블록체인</strong> 등에서 사용됩니다.</p>
+  </div>
+
+  <h3>🔎 나만의 해시값 생성해보기</h3>
+  <p>아래에 문자열을 입력하면 SHA-256이 어떻게 처리되는지 시각적으로 보여줍니다.</p>
+  <textarea id="inputText" rows="4" placeholder="예: hello123"></textarea>
+  <button onclick="generateVisualHash()">해시 알고리즘 시각화</button>
+
+  <div class="visual-box" id="visualSteps"></div>
+  <div class="output" id="hashOutput"></div>
+
+  <h3 style="margin-top: 30px;">🔐 해시값으로 로그인 시도하기</h3>
+  <p>저장된 해시값(1234의 해시값)과 입력한 해시값이 같으면 로그인 성공!</p>
+  <input type="text" id="loginHash" placeholder="SHA-256 해시값 입력" />
+  <button onclick="checkLogin()">로그인 시도</button>
+  <div class="output" id="loginResult"></div>
+
+  <p class="example">
+    예시:<br />
+    입력: <code>1234</code><br />
+    해시값: <code
+      >03ac674216f3e15c761ee1a5e255f067953623c8f9664f0f4c9b5f9f2ed7a34d</code
+    >
+  </p>
+
+  <div class="explanation" style="margin-top: 40px;">
+    <h3>📚 해시테이블 동작 원리</h3>
+    <ol>
+      <li><strong>해시 함수:</strong> 키를 숫자(인덱스)로 변환해 저장 위치를 결정합니다.</li>
+      <li><strong>데이터 저장:</strong> 변환된 인덱스 위치에 데이터를 저장합니다.</li>
+      <li><strong>데이터 검색:</strong> 같은 해시 함수로 인덱스를 찾아 바로 데이터에 접근합니다.</li>
+      <li><strong>충돌 문제:</strong> 서로 다른 키가 같은 인덱스로 변환될 수 있습니다.</li>
+      <li><strong>충돌 해결(체이닝):</strong> 같은 인덱스에 여러 데이터를 연결 리스트로 저장합니다.</li>
+    </ol>
+    <div
+      style="
+        background: #fff;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 8px;
+        font-family: monospace;
+        white-space: pre;
+      "
+    >
+[0] -> (빈칸)
+[1] -> (빈칸)
+[2] -> (banana)
+[3] -> (cat)
+[4] -> (dog)
+[5] -> (apple) -> (leppa)  // 충돌로 연결 리스트 형태
+[6] -> (빈칸)
+    </div>
+  </div>
+
+  <script>
+    const storedHash = CryptoJS.SHA256("1234").toString();
+
+    function generateVisualHash() {
+      const input = document.getElementById("inputText").value;
+      const stepsBox = document.getElementById("visualSteps");
+      const hashBox = document.getElementById("hashOutput");
+      stepsBox.innerHTML = "";
+
+      if (!input) {
+        stepsBox.innerHTML = '<div class="step">⚠️ 입력값이 없습니다.</div>';
+        hashBox.innerText = "";
+        return;
+      }
+
+      // Step 1: 입력 문자열 출력
+      stepsBox.innerHTML += `<div class="step">📥 입력: "${input}"</div>`;
+
+      // Step 2: UTF-8 인코딩 시뮬레이션
+      const encoded = unescape(encodeURIComponent(input))
+        .split("")
+        .map((c) => c.charCodeAt(0).toString(2).padStart(8, "0"))
+        .join(" ");
+      stepsBox.innerHTML += `<div class="step">🔢 UTF-8 인코딩: ${encoded}</div>`;
+
+      // Step 3: SHA-256 처리 (축약 설명)
+      stepsBox.innerHTML += `<div class="step">⚙️ SHA-256 압축 및 비트 연산...</div>`;
+
+      // Step 4: 최종 해시 출력
+      const hash = CryptoJS.SHA256(input).toString();
+      stepsBox.innerHTML += `<div class="step">✅ 최종 해시값: ${hash}</div>`;
+
+      hashBox.innerText = `🔑 SHA-256 해시값:\n${hash}`;
+    }
+
+    function checkLogin() {
+      const inputHash = document.getElementById("loginHash").value.trim();
+      const result = document.getElementById("loginResult");
+      if (inputHash === storedHash) {
+        result.innerText = "✅ 로그인 성공! 해시값이 일치합니다.";
+        result.style.color = "green";
+      } else {
+        result.innerText = "❌ 로그인 실패. 저장된 해시값과 다릅니다.";
+        result.style.color = "red";
+      }
+    }
+    
+  </script>
+    <h3 style="margin-top: 40px;">🛠 직접 구현한 해시 함수 체험</h3>
+  <p>아래는 자바스크립트로 직접 만든 간단한 해시 함수입니다.<br>해시 함수 구조를 이해하는 데 도움을 줍니다. (실제 보안용도 X)</p>
+
+  <textarea id="customInput" rows="3" placeholder="예: abcd"></textarea>
+  <button onclick="runCustomHash()">간단 해시 계산</button>
+  <div class="output" id="customHashResult"></div>
+
+  <script>
+    function runCustomHash() {
+      const input = document.getElementById("customInput").value;
+      const output = document.getElementById("customHashResult");
+
+      if (!input) {
+        output.innerText = '⚠️ 입력이 필요합니다.';
+        return;
+      }
+
+      let hash = 0;
+      let debug = '';
+
+      for (let i = 0; i < input.length; i++) {
+        const charCode = input.charCodeAt(i);
+        hash = (hash + ((charCode * (i + 1)) % 257)) % 9973;  // 작은 소수 사용
+        debug += `문자 '${input[i]}' → 코드 ${charCode} → 중간 해시: ${hash}\n`;
+      }
+
+      output.innerText = `📘 해시 처리 과정:\n${debug}\n\n🔑 최종 해시값 (CustomHash): ${hash}`;
+    }
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>31202</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="window main">
+    <img src="rim.png" alt="프로필 사진" class="profile-pic" />
+    <h1>I'm Narim</h1>
+    <p>hungjin high school student</p>
+    <div class="icon-row">
+      <button onclick="openWindow('about')">about</button>
+      <button onclick="openWindow('dream')">my dream</button>
+      <button onclick="openWindow('motto')">motto</button>
+      <button onclick="openWindow('goal')">academic goal</button>
+      <button id="modeToggleBtn" onclick="toggleMode()">Light Mode</button>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="window popup resizable" id="aboutWindow">
+    <div class="window-header">
+      <span>about</span>
+      <button onclick="closeWindow('about')">[x]</button>
+    </div>
+    <div class="window-body">
+      <h2>김나림 Narim Kim</h2>
+      <p>A student in Grade 3, Class 12, Number 2 at Hungjin High School<br/>
+         IT class </p>
+      <ul>
+        <li>mbti : ISFP</li>
+        <li>Favorites : Music, Ice cream</li>
+        <li>my dream: data scientist</li>
+      </ul>
+      <p>📧 boranarim@naver.com</p>
+    </div>
+  </div>
+
+  <!-- My Dream -->
+  <div class="window popup resizable" id="dreamWindow">
+    <div class="window-header">
+      <span>my dream</span>
+      <button onclick="closeWindow('dream')">[x]</button>
+    </div>
+    <div class="window-body">
+      <p>I want to be a <strong>Data Scientist</strong> who uses data to solve problems and find meaning.</p>
+    </div>
+  </div>
+
+  <!-- Motto -->
+  <div class="window popup resizable" id="mottoWindow">
+    <div class="window-header">
+      <span>motto</span>
+      <button onclick="closeWindow('motto')">[x]</button>
+    </div>
+    <div class="window-body">
+      <p>"가장 훌륭한 일은 모험과 도전정신으로 이루어진다."</p>
+    </div>
+  </div>
+
+  <!-- Academic Goal -->
+  <div class="window popup resizable" id="goalWindow">
+    <div class="window-header">
+      <span>academic goal</span>
+      <button onclick="closeWindow('goal')">[x]</button>
+    </div>
+    <div class="window-body">
+      <p>To enter a computer science department and specialize in AI or Data Analytics.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

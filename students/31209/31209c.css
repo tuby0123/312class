@@ -1,0 +1,84 @@
+/* 기본 스타일 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+/* 전체 너비 중앙 정렬 */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* 헤더 스타일 */
+header {
+  background: linear-gradient(120deg, #4CAF50, #45a049);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+header p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+/* 카드 스타일 */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 20px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  color: #4CAF50;
+  margin-top: 0;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 8px;
+}
+
+/* 프로젝트 개별 스타일 */
+.project {
+  margin-bottom: 20px;
+}
+
+.project h3 {
+  margin: 0 0 5px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.project p {
+  margin: 0;
+  font-size: 0.95em;
+}
+
+/* 링크 스타일 */
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 푸터 */
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  background-color: #e0e0e0;
+  color: #555;
+}
