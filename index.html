@@ -1,40 +1,161 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우리 학급 홈페이지</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="preload" href="./assets/codioful-formerly-gradienta-P7KnvzCYDEQ-unsplash(2).jpg" as="image">
 </head>
 <body>
-    <header class="main-header">
-        <h1>흥진고등학교 3학년 12반</h1>
-        <p>함께 꿈을 키워가는 우리의 공간</p>
-    </header>
-
-    <nav class="main-nav">
-        <ul>
-            <li><a href="">학급 소개</a></li>
-            <li><a href="gallery.html">학급 갤러리</a></li>
-            <li><a href="feelings_board.html">1학기 소감 나누기</a></li>
-            <li><a href="">문의하기</a></li>
+    <nav class="
+        fixed top-5 left-0 right-0 w-full
+        
+        flex z-50 justify-center items-center  
+    ">
+        <ul class="
+            [&>li>a]:text-blue-950 flex-row flex gap-6 
+            bg-blue-50/80 border border-blue-50 backdrop-blur-xs 
+            justify-center items-center
+            px-8 py-3 rounded-full overflow-hidden 
+        ">
+            <li><a href="#">학급 소개</a></li>
+            <li><a href="#gallery">학급 갤러리</a></li>
+            <li><a href="#feelings_board">1학기 소감 나누기</a></li>
+            <!-- <li><a href="">문의하기</a></li> -->
         </ul>
     </nav>
+    <header class="h-[90vh] flex justify-center items-center flex-col  relative">
+        
+        <div class="mx-10 flex-col flex justify-center items-center text-center h-full w-full">
+            <p class="mb-8 text-xl">흥진고등학교 3학년 12반</p>
+            <h1 class="text-6xl font-semibold leading-18 max-md:text-5xl max-md:leading-15">함께 꿈을 키워가는<br/>우리의 공간</h1>
+            <!-- <h2>환영합니다!</h2> -->
+            <p class="my-8 text-xl leading-7 max-w-xl max-md:text-lg max-md:leading-6 max-md:p-5 break-keep">우리 흥진고등학교 3학년 12반 홈페이지에 오신 것을 진심으로 환영합니다. 이곳은 저희 반의 활동과 추억을 공유하고, 서로 소통하며 함께 성장하는 공간입니다.</p>
+        </div>
+        
+        <!-- <p>각자의 개성과 재능이 빛나는 우리 반 친구들의 멋진 페이지들도 기대해 주세요!</p> -->
+        <div class="absolute top-0 left-0 -z-10 w-full h-full object-fill">
+            <div class="relative w-full h-full select-none">
+                <div class="backdrop-blur-sm w-full h-full absolute top-0 left-0 bg-gradient-to-t from-white to-white/0 to-15%"></div>
+                <img
+                    src="./assets/codioful-formerly-gradienta-P7KnvzCYDEQ-unsplash(2).jpg"
+                    class="w-full h-full object-cover"
+                    fetchpriority="high" alt=""
+                />
+            </div>
+        </div>
+    </header>
 
-    <main class="main-content">
-        <section id="intro" class="hero-section">
-            <h2>환영합니다!</h2>
-            <p>우리 흥진고등학교 3학년 12반 홈페이지에 오신 것을 진심으로 환영합니다. 이곳은 저희 반의 활동과 추억을 공유하고, 서로 소통하며 함께 성장하는 공간입니다.</p>
-            <p>각자의 개성과 재능이 빛나는 우리 반 친구들의 멋진 페이지들도 기대해 주세요!</p>
-            <div class="class-photo-placeholder">
-                <img src="class_photo.jpg" alt="학급 사진 예시">
-                <p>학급 사진이 들어갈 공간입니다.</p>
+    <section class="flex justify-center items-center text-center flex-col my-8" id="gallery">
+        <h2 class="text-4xl leading-11">학급 갤러리</h2>
+        <p class="my-4 text-lg opacity-50 break-keep px-5">우리 학급 친구들이 HTML과 CSS를 활용하여 만든 개성 넘치는 홈페이지들을 만나보세요</p>
+        <div class="flex flex-col gap-3 max-w-xl justify-center">
+            <!-- 학생 1의 프로젝트 -->
+            <div class="student-card">
+                <h3>3학년 12반 1번</h3>
+                <a href="students/31201/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 2번</h3>
+                <a href="students/31202/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 3번</h3>
+                <a href="students/31203/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 4번</h3>
+                <a href="students/31204/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 5번</h3>
+                <a href="students/31205/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 6번</h3>
+                <a href="students/31206/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 7번</h3>
+                <a href="students/31207/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 8번</h3>
+                <a href="students/31208/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 9번</h3>
+                <a href="students/31209/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 10번</h3>
+                <a href="students/31210/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 11번</h3>
+                <a href="students/31211/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 12번</h3>
+                <a href="students/31212/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 13번</h3>
+                <a href="students/31213/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 14번</h3>
+                <a href="students/31214/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 15번</h3>
+                <a href="students/31215/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 16번</h3>
+                <a href="students/31216/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 17번</h3>
+                <a href="students/31217/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 18번</h3>
+                <a href="students/31218/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 19번</h3>
+                <a href="students/31219/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 20번</h3>
+                <a href="students/31220/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 21번</h3>
+                <a href="students/31221/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 22번</h3>
+                <a href="students/31222/" class="view-button">페이지 보러가기</a>
+              </div>
+              <div class="student-card">
+                <h3>3학년 12반 23번</h3>
+                <a href="students/31223/" class="view-button">페이지 보러가기</a>
+              </div>
+        </div>
+        <section class="w-full flex h-[80vh] justify-center items-center flex-col" id="feelings_board">
+            <div class="text-left font-semibold flex gap-4 flex-col">
+                <h2 class="text-3xl font-semibold leading-9">
+                    1학기 소감 나누기
+                </h2>
+                <a class="inline-block text-center text-blue-500 underline text-xl" href="./feelings_board.html">소감 작성 페이지로 이동</a>
             </div>
         </section>
-    </main>
+    </nav>
 
-    <footer class="main-footer">
-        <p>&copy; 흥진고등학교 3학년 12반. All rights reserved.</p>
-    </footer>
+   
 </body>
 </html>
